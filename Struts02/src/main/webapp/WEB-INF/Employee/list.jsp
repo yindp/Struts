@@ -6,11 +6,18 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
     <title>WildCard list</title>
 </head>
 <body>
-<h1>WildCard list</h1>
+<h1>WildCard list</h1><br>
+${username}_${password}<br>
+<s:property value="username"/><br>
+<s:property value="password"/>
+<hr>
+${name}
+<s:property value="name"/>
 </body>
 </html>

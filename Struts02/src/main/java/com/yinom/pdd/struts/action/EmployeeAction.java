@@ -1,5 +1,7 @@
 package com.yinom.pdd.struts.action;
 
+import com.opensymphony.xwork2.ActionContext;
+
 /**
  * Created by yindp on 4/25/17.
  */
@@ -23,9 +25,17 @@ public class EmployeeAction {
         this.password = password;
     }
 
+    /**
+     *
+     *
+     * @return
+     */
     public String list() {
+        //parameter transfer by getter and setter
         System.out.println("username:" + username);
         System.out.println("password:" + password);
+        //parameter transfer by ActionContext
+        ActionContext.getContext().put("name", "Sara");
         return "list";
     }
 }
