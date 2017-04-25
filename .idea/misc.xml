@@ -39,12 +39,14 @@
     </properties>
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/Struts02" />
     <file type="web" url="file://$PROJECT_DIR$/Struts2" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/Struts2/pom.xml" />
+        <option value="$PROJECT_DIR$/Struts02/pom.xml" />
       </list>
     </option>
   </component>
