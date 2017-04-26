@@ -25,5 +25,6 @@ ${age1}<br>
 <s:property value="#request.age"/>
 <hr>
 <s:property value="#salary"/>
+<s:debug/>
 </body>
 </html>
