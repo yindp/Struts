@@ -19,5 +19,10 @@ ${username}_${password}<br>
 <hr>
 ${name}
 <s:property value="name"/>
+<hr>
+${age1}<br>
+<s:property value="#request.age"/>
+<hr>
+<s:property value="#salary"/>
 </body>
 </html>
