@@ -1,6 +1,7 @@
 package com.yinom.pdd.struts.action;
 
 import com.opensymphony.xwork2.ActionContext;
+import com.yinom.pdd.struts.model.Employee;
 import org.apache.struts2.ServletActionContext;
 
 /**
@@ -31,8 +32,15 @@ public class EmployeeAction {
      */
     public String list() {
         //1.parameter transfer by getter and setter
-        System.out.println("username:" + username);
-        System.out.println("password:" + password);
+        this.setUsername("Moly");
+        this.setPassword("Password1");
+        /*System.out.println("username:" + username);
+        System.out.println("password:" + password);*/
+        Employee emp = new Employee();
+        emp.setUserName("Coco");
+        emp.setPassword("12389");
+
+        ActionContext.getContext().getValueStack().push(emp);
         //2.parameter transfer by ActionContext
         ActionContext.getContext().put("name", "Sara");
         ActionContext.getContext().put("salary", 1000);

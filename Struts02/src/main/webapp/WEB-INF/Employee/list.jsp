@@ -14,8 +14,9 @@
 <body>
 <h1>WildCard list</h1><br>
 ${username}_${password}<br>
-<s:property value="username"/><br>
-<s:property value="password"/>
+<s:property value="username"/>_<s:property value="password"/>
+<br>
+<s:property value="#root[1].username"/>_<s:property value="#root[1].password"/>
 <hr>
 ${name}
 <s:property value="name"/>
