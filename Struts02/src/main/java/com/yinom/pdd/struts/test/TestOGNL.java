@@ -74,7 +74,35 @@ public class TestOGNL {
             System.out.println(Ognl.getValue("#root[0].nickname", emps));
             for (int i = 0; i < emps.size(); i++) {
                 System.out.println(Ognl.getValue("#root[" + i + "]", emps));
+                System.out.println(emps.get(i).getNickName());
             }
+        } catch (OgnlException e) {
+            e.printStackTrace();
+        } finally {
+        }
+    }
+
+    @Test
+    public void test04() {
+        Employee emp1 = new Employee("121", "admin", "123", "administrator", 1000);
+        Employee emp2 = new Employee("121", "coco", "123", "it", 10100);
+        Employee emp3 = new Employee("121", "Eri", "123", "user", 10030);
+        Department dept = new Department("1234", "Research");
+        emp1.setDepartment(dept);
+        emp2.setDepartment(dept);
+        emp3.setDepartment(dept);
+        List<Employee> emps = new ArrayList<Employee>();
+        emps.add(emp1);
+        emps.add(emp2);
+        emps.add(emp3);
+
+        try {
+            System.out.println(Ognl.getValue("#root[0].nickname", emps));
+            System.out.println(Ognl.getValue("#root[0].showInfo('Good Night')", emps));
+            System.out.println(Ognl.getValue("showInfo('Good Morning')", emp1));
+            System.out.println(Ognl.getValue("get(0)", emps));
+            System.out.println(Ognl.getValue("size()", emps));
+
         } catch (OgnlException e) {
             e.printStackTrace();
         } finally {

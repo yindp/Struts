@@ -11,6 +11,10 @@ public class Employee {
     private double salary;
     private Department department;
 
+    public String showInfo(String msg) {
+        return msg;
+    }
+
     public Employee(String id, String userName, String password, String nickName, double salary, Department department) {
         this.id = id;
         this.userName = userName;
