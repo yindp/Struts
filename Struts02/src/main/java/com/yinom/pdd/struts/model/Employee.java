@@ -9,6 +9,24 @@ public class Employee {
     private String password;
     private String nickName;
     private double salary;
+    private Department department;
+
+    public Employee(String id, String userName, String password, String nickName, double salary, Department department) {
+        this.id = id;
+        this.userName = userName;
+        this.password = password;
+        this.nickName = nickName;
+        this.salary = salary;
+        this.department = department;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 
     public Employee() {
 
