@@ -3,8 +3,8 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
-    <constant name="struts.action.extension" value="do,action,"/>
-    <constant name="struts.configuration.xml.reload" value="true"/>
+    <!--<constant name="struts.action.extension" value="do,action,"/>-->
+    <!--<constant name="struts.configuration.xml.reload" value="true"/>-->
 
     <package name="default" extends="struts-default">
         <action name="emp" class="com.yinom.pdd.struts.action.EmployeeAction" method="execute">
@@ -15,6 +15,12 @@
         </action>
         <action name="empList" class="com.yinom.pdd.struts.action.EmployeeAction" method="empList">
             <result name="success">/WEB-INF/Employee/empList.jsp</result>
+        </action>
+        <action name="Employee_test" class="com.yinom.pdd.struts.action.EmployeeAction" method="test">
+            <result name="test">/WEB-INF/Employee/test.jsp</result>
+        </action>
+        <action name="Employee_show" class="com.yinom.pdd.struts.action.EmployeeAction" method="show">
+            <result name="show">/WEB-INF/Employee/show.jsp</result>
         </action>
 
         <action name="*_*" class="com.yinom.pdd.struts.action.{1}Action" method="{2}">

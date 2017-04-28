@@ -27,6 +27,26 @@ public class EmployeeAction {
         this.password = password;
     }
 
+    public String test() {
+        //1.parameter transfer by getter and setter
+        this.setUsername("Moly");
+        this.setPassword("Password1");
+        /*System.out.println("username:" + username);
+        System.out.println("password:" + password);*/
+        Employee emp = new Employee();
+        emp.setUserName("Coco");
+        emp.setPassword("12389");
+
+        ActionContext.getContext().getValueStack().push(emp);
+        //2.parameter transfer by ActionContext
+        ActionContext.getContext().put("name", "Sara");
+        ActionContext.getContext().put("salary", 1000);
+        //3.parameter transfer by Servlet API
+        ServletActionContext.getContext().put("age1", 10);
+        ServletActionContext.getRequest().setAttribute("age2", 20);
+        return "test";
+    }
+
     /**
      * @return
      */
@@ -48,5 +68,11 @@ public class EmployeeAction {
         ServletActionContext.getContext().put("age1", 10);
         ServletActionContext.getRequest().setAttribute("age2", 20);
         return "list";
+    }
+
+
+    public String show() {
+        ActionContext.getContext().put("salary", 1000);
+        return "show";
     }
 }
