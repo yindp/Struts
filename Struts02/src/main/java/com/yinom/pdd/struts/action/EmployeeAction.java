@@ -1,8 +1,13 @@
 package com.yinom.pdd.struts.action;
 
+import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
+import com.yinom.pdd.struts.model.Department;
 import com.yinom.pdd.struts.model.Employee;
 import org.apache.struts2.ServletActionContext;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by yindp on 4/25/17.
@@ -73,6 +78,18 @@ public class EmployeeAction {
 
     public String show() {
         ActionContext.getContext().put("salary", 1000);
+        Employee emp1 = new Employee("121", "admin", "123", "administrator", 1000);
+        Employee emp2 = new Employee("122", "coco", "123", "it", 10100);
+        Employee emp3 = new Employee("123", "Eri", "123", "user", 10030);
+        Department dept = new Department("1234", "Research");
+        emp1.setDepartment(dept);
+        emp2.setDepartment(dept);
+        emp3.setDepartment(dept);
+        List<Employee> emps = new ArrayList<Employee>();
+        emps.add(emp1);
+        emps.add(emp2);
+        emps.add(emp3);
+        ActionContext.getContext().put("emps", emps);
         return "show";
     }
 }

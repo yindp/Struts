@@ -21,5 +21,9 @@
 <s:else>
     Salary is more than 3000.
 </s:else>
+<hr>
+<s:iterator value="#emps">
+    <s:property value="id"/>_<s:property value="userName"/>_<s:property value="password"/>_<s:property value="nickName"/>_<s:property value="salary"/><br>
+</s:iterator>
 </body>
 </html>
