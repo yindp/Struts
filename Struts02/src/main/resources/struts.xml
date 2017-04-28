@@ -22,6 +22,15 @@
         <action name="Employee_show" class="com.yinom.pdd.struts.action.EmployeeAction" method="show">
             <result name="show">/WEB-INF/Employee/show.jsp</result>
         </action>
+        <action name="Department_add" class="com.yinom.pdd.struts.action.DepartmentAction" method="add">
+            <result name="add">/WEB-INF/Department/add.jsp</result>
+        </action>
+        <action name="Department_doAdd" class="com.yinom.pdd.struts.action.DepartmentAction" method="doAdd">
+            <result name="doAdd">/WEB-INF/Department/doAdd.jsp</result>
+        </action>
+        <action name="Department_update" class="com.yinom.pdd.struts.action.DepartmentAction" method="update">
+            <result name="update">/WEB-INF/Department/update.jsp</result>
+        </action>
 
         <action name="*_*" class="com.yinom.pdd.struts.action.{1}Action" method="{2}">
             <result name="{2}">/WEB-INF/{1}/{2}.jsp</result>
