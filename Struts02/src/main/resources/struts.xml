@@ -63,7 +63,8 @@
         </action>
         <action name="admin_Show" class="com.yinom.pdd.struts.action.LoginAction" method="adminShow">
             <interceptor-ref name="systemStack"/>
-            <result name="success">/WEB-INF/Login/adminShow.jsp</result>
+            <!--<result name="success">/WEB-INF/Login/adminShow.jsp</result>-->
+            <result type="redirect">user_Show</result>
         </action>
         <action name="user_Show" class="com.yinom.pdd.struts.action.LoginAction" method="userShow">
             <interceptor-ref name="systemStack"/>
