@@ -4,7 +4,10 @@ import com.opensymphony.xwork2.ModelDriven;
 import com.yinom.pdd.struts.model.Department;
 import com.yinom.pdd.struts.service.DepartmentService;
 import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.io.FileUtils;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
 /**
@@ -12,6 +15,33 @@ import java.lang.reflect.InvocationTargetException;
  */
 public class DepartmentAction implements ModelDriven {
     private Department dept;
+    private File photo;
+    private String photoFileName;
+    private String photoContentType;
+
+    public String getPhotoFileName() {
+        return photoFileName;
+    }
+
+    public void setPhotoFileName(String photoFileName) {
+        this.photoFileName = photoFileName;
+    }
+
+    public String getPhotoContentType() {
+        return photoContentType;
+    }
+
+    public void setPhotoContentType(String photoContentType) {
+        this.photoContentType = photoContentType;
+    }
+
+    public File getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(File photo) {
+        this.photo = photo;
+    }
 
     public Department getDept() {
         return dept;
@@ -34,9 +64,22 @@ public class DepartmentAction implements ModelDriven {
         Department dm = ds.load();
        /* dept.setId(dm.getId());
         dept.setName(dm.getName());*/
-        BeanUtils.copyProperties(dept,dm);
+        BeanUtils.copyProperties(dept, dm);
         return "update";
     }
+
+    public String upload() {
+        return "upload";
+    }
+
+    public String doUpload() throws IOException {
+        System.out.println(photo);
+        System.out.println(photoFileName);
+        System.out.println(photoContentType);
+        FileUtils.copyFile(photo,new File("./"+photoFileName));
+        return "doUpload";
+    }
+
     public Object getModel() {
         if (dept == null) {
             dept = new Department();

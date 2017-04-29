@@ -31,6 +31,12 @@
         <action name="Department_update" class="com.yinom.pdd.struts.action.DepartmentAction" method="update">
             <result name="update">/WEB-INF/Department/update.jsp</result>
         </action>
+        <action name="Department_upload" class="com.yinom.pdd.struts.action.DepartmentAction" method="upload">
+            <result name="upload">/WEB-INF/Department/upload.jsp</result>
+        </action>
+        <action name="Department_doUpload" class="com.yinom.pdd.struts.action.DepartmentAction" method="doUpload">
+            <result name="doUpload">/WEB-INF/Department/doUpload.jsp</result>
+        </action>
 
         <action name="*_*" class="com.yinom.pdd.struts.action.{1}Action" method="{2}">
             <result name="{2}">/WEB-INF/{1}/{2}.jsp</result>
