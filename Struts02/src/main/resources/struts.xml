@@ -21,7 +21,7 @@
             </interceptor-stack>
         </interceptors>
         <global-results>
-            <result name="loginInput">/WEB-INF/Login/login.jsp</result>
+            <result name="redirect">${url}</result>
             <result name="error">/WEB-INF/Error/error.jsp</result>
         </global-results>
         <action name="emp" class="com.yinom.pdd.struts.action.EmployeeAction" method="execute">

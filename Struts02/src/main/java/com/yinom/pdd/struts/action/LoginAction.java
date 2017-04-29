@@ -44,8 +44,14 @@ public class LoginAction {
     public String adminShow() {
         return "success";
     }
+   /* public String logout() {
+        ActionContext.getContext().getSession().clear();
+
+        return "loginInput";
+    }*/
     public String logout() {
         ActionContext.getContext().getSession().clear();
-        return "loginInput";
+        ActionContext.getContext().put("url", "/WEB-INF/Login/login.jsp");
+        return "redirect";
     }
 }
