@@ -15,6 +15,10 @@
     id:<input type="texte" name="id"/><br>
     name:<input type="text" name="name"/><br>
     photo:<input type="file" name="photo"><br>
+    <input type="file" name="photo"><br>
+    <input type="file" name="photo"><br>
+    <input type="file" name="photo"><br>
+    <input type="file" name="photo"><br>
     <input type="submit" value="Submit">
 </form>
 </body>

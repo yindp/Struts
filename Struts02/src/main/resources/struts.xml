@@ -5,6 +5,9 @@
 <struts>
     <!--<constant name="struts.action.extension" value="do,action,"/>-->
     <!--<constant name="struts.configuration.xml.reload" value="true"/>-->
+    <!--change file upload size-->
+
+    <constant name="struts.multipart.maxSize" value="102400000"/>
 
     <package name="default" extends="struts-default">
         <action name="emp" class="com.yinom.pdd.struts.action.EmployeeAction" method="execute">

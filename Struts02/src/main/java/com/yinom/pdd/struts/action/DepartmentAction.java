@@ -15,32 +15,32 @@ import java.lang.reflect.InvocationTargetException;
  */
 public class DepartmentAction implements ModelDriven {
     private Department dept;
-    private File photo;
-    private String photoFileName;
-    private String photoContentType;
+    private File[] photo;
+    private String[] photoFileName;
+    private String[] photoContentType;
 
-    public String getPhotoFileName() {
-        return photoFileName;
-    }
-
-    public void setPhotoFileName(String photoFileName) {
-        this.photoFileName = photoFileName;
-    }
-
-    public String getPhotoContentType() {
-        return photoContentType;
-    }
-
-    public void setPhotoContentType(String photoContentType) {
-        this.photoContentType = photoContentType;
-    }
-
-    public File getPhoto() {
+    public File[] getPhoto() {
         return photo;
     }
 
-    public void setPhoto(File photo) {
+    public void setPhoto(File[] photo) {
         this.photo = photo;
+    }
+
+    public String[] getPhotoFileName() {
+        return photoFileName;
+    }
+
+    public void setPhotoFileName(String[] photoFileName) {
+        this.photoFileName = photoFileName;
+    }
+
+    public String[] getPhotoContentType() {
+        return photoContentType;
+    }
+
+    public void setPhotoContentType(String[] photoContentType) {
+        this.photoContentType = photoContentType;
     }
 
     public Department getDept() {
@@ -73,10 +73,13 @@ public class DepartmentAction implements ModelDriven {
     }
 
     public String doUpload() throws IOException {
-        System.out.println(photo);
+        /*System.out.println(photo);
         System.out.println(photoFileName);
-        System.out.println(photoContentType);
-        FileUtils.copyFile(photo,new File("./"+photoFileName));
+        System.out.println(photoContentType);*/
+        for(int i=0;i<photo.length;i++) {
+            FileUtils.copyFile(photo[i],new File("image/"+photoFileName[i]));
+        }
+
         return "doUpload";
     }
 
