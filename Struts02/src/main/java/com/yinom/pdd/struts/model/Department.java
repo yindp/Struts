@@ -4,23 +4,23 @@ package com.yinom.pdd.struts.model;
  * Created by yindp on 4/26/17.
  */
 public class Department {
-    private String id;
+    private int id;
     private String name;
 
     public Department() {
 
     }
 
-    public Department(String id, String name) {
+    public Department(int id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -1,5 +1,6 @@
 package com.yinom.pdd.struts.action;
 
+import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.yinom.pdd.struts.model.Department;
 import com.yinom.pdd.struts.service.DepartmentService;
@@ -13,7 +14,7 @@ import java.lang.reflect.InvocationTargetException;
 /**
  * Created by yindp on 4/28/17.
  */
-public class DepartmentAction implements ModelDriven {
+public class DepartmentAction extends ActionSupport implements ModelDriven{
     private Department dept;
     private File[] photo;
     private String[] photoFileName;
@@ -53,6 +54,15 @@ public class DepartmentAction implements ModelDriven {
 
     public String add() {
         return "add";
+    }
+    public void validateAdd() {
+        if (dept.getId() < 1 || dept.getId() > 100) {
+            this.addFieldError("id", "id is between 1 to 100");
+        }
+        if (dept.getName() == null) {
+            this.addFieldError("name","name can't be null");
+        }
+        /*<s:fielderror fieldName="name"/>*/
     }
 
     public String doAdd() {
