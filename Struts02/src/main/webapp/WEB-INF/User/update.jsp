@@ -9,15 +9,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Update department</title>
+    <title>Update User</title>
 </head>
 <body>
-<form action="Department_doUpdate" method="post">
-    <%--id:<input type="texte" name="id" value="<s:property value="dept.id"/> "/><br>
-    name:<input type="text" name="name" value="<s:property value="dept.name"/> "/><br>--%>
-        id:<input type="texte" name="id" value="<s:property value="id"/> "/><br>
-        name:<input type="text" name="name" value="<s:property value="name"/> "/><br>
-    <input type="submit" value="Submit">
-</form>
+<s:form acceptcharset="User_update" method="POST">
+    <s:textfield label="id" name="id"/>
+    <s:textfield label="username" name="username"/>
+    <%--<s:checkboxlist label="hobby" name="hobbies"
+                    list="#{'read':'read','sport':'sport','music':'music','money':'money'}" listKey="key" listValue="value"></s:checkboxlist>
+    <s:radio label="gender" name="gender" list="#{'0':'male','1':'female'}"/>--%>
+    <s:select list="#departments" label="Department" listKey="id" listValue="name" headerKey="-1" headerValue="Department"/>
+    <s:submit value="Submit"/>
+</s:form>
 </body>
 </html>

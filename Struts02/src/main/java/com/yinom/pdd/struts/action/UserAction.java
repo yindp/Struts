@@ -45,6 +45,14 @@ public class UserAction extends ActionSupport implements ModelDriven {
     }
 
     public String update() {
+        Department department1 = new Department("1", "Office");
+        Department department2 = new Department("2", "Research");
+        Department department3 = new Department("3", "Sales");
+        List<Department> departments = new ArrayList<Department>();
+        departments.add(department1);
+        departments.add(department2);
+        departments.add(department3);
+        ActionContext.getContext().put("departments", departments);
         ActionContext.getContext().put("user", user);
         return "update";
     }
