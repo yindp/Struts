@@ -1,7 +1,7 @@
 package com.yinom.pdd.struts.action;
 
-import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
 import com.yinom.pdd.struts.model.Department;
 import com.yinom.pdd.struts.model.Employee;
 import org.apache.struts2.ServletActionContext;
@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by yindp on 4/25/17.
  */
-public class EmployeeAction {
+public class EmployeeAction extends ActionSupport {
     private String username;
     private String password;
 
@@ -91,5 +91,9 @@ public class EmployeeAction {
         emps.add(emp3);
         ActionContext.getContext().put("emps", emps);
         return "show";
+    }
+
+    public String local() {
+        return "local";
     }
 }

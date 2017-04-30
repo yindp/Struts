@@ -6,6 +6,7 @@
     <!--<constant name="struts.action.extension" value="do,action,"/>-->
     <!--<constant name="struts.configuration.xml.reload" value="true"/>-->
     <!--change file upload size-->
+    <constant name="struts.custom.i18n.resources" value="language" />
 
     <constant name="struts.multipart.maxSize" value="102400000"/>
 
@@ -78,6 +79,7 @@
             <interceptor-ref name="defaultStack"/>-->
             <interceptor-ref name="systemStack"/>
             <result name="{2}">/WEB-INF/{1}/{2}.jsp</result>
+            <allowed-methods>local</allowed-methods>
         </action>
     </package>
 </struts>
