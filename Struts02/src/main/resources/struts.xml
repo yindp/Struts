@@ -7,7 +7,7 @@
     <!--<constant name="struts.configuration.xml.reload" value="true"/>-->
     <!--change file upload size-->
     <constant name="struts.custom.i18n.resources" value="language" />
-
+    <constant name="struts.ui.theme" value="simple"/>
     <constant name="struts.multipart.maxSize" value="102400000"/>
 
     <package name="default" extends="struts-default">

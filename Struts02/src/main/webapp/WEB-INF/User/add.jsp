@@ -19,6 +19,7 @@
                     list="#{'read':'read','sport':'sport','music':'music','money':'money'}" listKey="key" listValue="value"></s:checkboxlist>
     <s:radio label="gender" name="gender" list="#{'0':'male','1':'female'}"/>
     <s:select list="#departments" label="Department" listKey="id" listValue="name" headerKey="-1" headerValue="Department"/>
+    <s:submit value="Submit"/>
 </s:form>
 </body>
 </html>
