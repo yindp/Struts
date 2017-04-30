@@ -2,6 +2,7 @@ package com.yinom.pdd.struts.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import com.yinom.pdd.struts.exception.MySystemException;
 import com.yinom.pdd.struts.model.Department;
 import com.yinom.pdd.struts.service.DepartmentService;
 import org.apache.commons.beanutils.BeanUtils;
@@ -66,6 +67,9 @@ public class DepartmentAction extends ActionSupport implements ModelDriven{
     }
 
     public String doAdd() {
+        if (dept.getId() > 100) {
+            throw new MySystemException("id wrong");
+        }
         return "doAdd";
     }
 
